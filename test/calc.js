@@ -50,7 +50,7 @@ describe('Calc', () => {
       const num1 = 6;
       const num2 = 0;
 
-      expect(calc.div(num1, num2)).to.throw();
+      expect(calc.div(num1, num2)).to.include('Divide 0');
     });
   });
 });

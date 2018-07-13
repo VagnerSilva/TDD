@@ -4,7 +4,7 @@ module.exports = {
   sub: (...args) => args.reduce((value, total) => -total - value, 0),
   mult: (...args) => args.reduce((total, value) => total * value),
   div: (...args) => args.reduce((total, value) => {
-    if (value === 0) throw new Error('Divide 0');
+    if (value === 0) return 'Divide 0';
     return total / value;
   }),
 };
