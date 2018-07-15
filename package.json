@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint src/*.js --bail",
-    "prepush": "npm run  && npm run test:coverage",
+    "prepush": "npm run  && npm run test",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "./node_modules/.bin/mocha test/**/*.js --require babel-register",
-    "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "test:coverage": "nyc npm test",
+    "test:coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "functions": 85,
