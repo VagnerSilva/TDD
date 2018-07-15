@@ -9,7 +9,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "./node_modules/.bin/mocha test/**/*.js --require babel-register",
-    "test:coverage": "nyc npm test"
+    "test:coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "functions": 85,
@@ -44,6 +44,7 @@
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.19",
+    "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
